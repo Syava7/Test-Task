@@ -12,7 +12,7 @@ function App() {
       <Switch>
         <Route exact path='/' render={()=><HomePage />} />
         <Route path='/home' render={()=><HomePage />} />
-        <Route path='/users' render={()=><UsersPage />}/>
+        <Route path='/posts' render={()=><UsersPage />}/>
       </Switch>
     </div>
   );
