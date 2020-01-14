@@ -1,6 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const UsersPage = () => {
+
+const UsersPage = ({users, isLoading}) => {
+  console.log(users, isLoading)
   return (
     <div>
       Im Users
@@ -8,4 +11,12 @@ const UsersPage = () => {
   )
 }
 
-export default UsersPage
+const mapStateToProps = (state) => {
+  return {
+    users: state.users,
+    isLoading: state.isLoading
+  }
+}
+
+
+export default connect(mapStateToProps, {})(UsersPage)

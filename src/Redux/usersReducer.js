@@ -28,11 +28,9 @@ const usersReducer = (state = initialState, action) => {
 const setUsers = (users) => ({type: SET_USERS, users})
 const toogleIsLoadind = (isLoading) => ({type: IS_LOADING, isLoading})
 
-const getUsers = () => async (dispatch) => {
-  dispatch(toogleIsLoadind(true))
+const getUsers = async () => {
   const res = await axios.get('http://localhost:3000/users')
-  dispatch(toogleIsLoadind(false))
-  dispatch(setUsers(res.data))    
+   
 }
 
 getUsers()
