@@ -6,7 +6,9 @@ const IS_LOADING = 'IS_LOADING'
 
 const initialState = {
   users: [],
-  isLoading: false
+  isLoading: false,
+  currentPage: 1,
+  usersPerPage: 5
 }
 
 const usersReducer = (state = initialState, action) => {
