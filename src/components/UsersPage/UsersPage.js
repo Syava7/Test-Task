@@ -1,22 +1,23 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 
 const UsersPage = ({users, isLoading}) => {
-  console.log(users, isLoading)
+  if (isLoading) {
+    return <h5>Loading...</h5>
+  }
   return (
-    <div>
-      Im Users
-    </div>
+    <ul className='list-group mb-4'>
+      {
+        users.map(user => (
+          <li key={user.id} className='list-group-item'>
+            <div>{user.name} {user.surname}</div>
+            <div>{user.desc}</div>
+          </li>
+        ))
+      }
+    </ul>
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    users: state.users,
-    isLoading: state.isLoading
-  }
-}
 
-
-export default connect(mapStateToProps, {})(UsersPage)
+export default UsersPage

@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
-import UsersPage from './components/UsersPage/UsersPage';
 import HomePage from './components/HomePage/HomePage';
 import Navbar from './components/Navbar/Navbar';
+import UsersPageContainer from './components/UsersPage/UsersPageContainer';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Switch>
         <Route exact path='/' render={()=><HomePage />} />
         <Route path='/home' render={()=><HomePage />} />
-        <Route path='/posts' render={()=><UsersPage />}/>
+        <Route path='/posts' render={()=><UsersPageContainer />}/>
       </Switch>
     </div>
   );

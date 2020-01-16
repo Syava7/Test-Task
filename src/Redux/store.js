@@ -5,3 +5,5 @@ import thunkMiddleware from 'redux-thunk'
 const store = createStore(usersReducer, applyMiddleware(thunkMiddleware))
 
 export default store
+
+
